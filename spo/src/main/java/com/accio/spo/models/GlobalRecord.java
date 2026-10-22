@@ -1,0 +1,27 @@
+package com.accio.spo.models;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@SuperBuilder
+@Table(name = "global_records")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class GlobalRecord {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID sysId;
+    private String createdBy;
+    private String updatedBy;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+}
