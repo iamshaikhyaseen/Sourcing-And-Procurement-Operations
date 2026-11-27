@@ -15,6 +15,7 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @Table(name = "operations")
 public class Operation extends GlobalRecord{
+    @Column(unique = true,nullable = false)
     private String id;
     @Column(unique = true,nullable = false)
     private String operationName;
